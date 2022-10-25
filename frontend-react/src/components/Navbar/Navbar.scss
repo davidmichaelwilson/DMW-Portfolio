@@ -20,12 +20,14 @@
     align-items: center;
 
     img {
-        width: 90px;
-        height: 20px;
+        // width: 90px;
+        // height: 20px;
+        height: 75px;
 
         @media screen and (min-width: 2000px) {
-            width: 180px;
-            height: 40px;
+            // width: 180px;
+            // height: 40px;
+            height: 125px;
         }
     }
 }
@@ -81,6 +83,7 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    border: 1.5px solid black;
     position: relative;
 
     display: flex;

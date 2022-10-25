@@ -35,6 +35,12 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import WalterLogo from '../assets/WalterLogo.png';
+import wmstudiosBW from '../assets/wmstudiosBW.png';
+import wmstudiosBW_SVG from '../assets/wmstudiosBW.svg';
+import wmstudiosGR from '../assets/wmstudiosGR.png';
+import wmstudiosGR_SVG from '../assets/wmstudiosGR.svg';
+
 export default {
   email,
   mobile,
@@ -69,4 +75,10 @@ export default {
   nb,
   skype,
   spotify,
+
+  WalterLogo,
+  wmstudiosBW,
+  wmstudiosBW_SVG,
+  wmstudiosGR,
+  wmstudiosGR_SVG,
 };

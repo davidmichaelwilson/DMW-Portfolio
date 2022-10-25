@@ -19,13 +19,11 @@ const Testimonial = () => {
     const query = '*[_type == "testimonials"]';
     const brandsQuery = '*[_type == "brands"]';
 
-    client.fetch(query)
-    .then((data) => {
+    client.fetch(query).then((data) => {
       setTestimonials(data);
     });
 
-    client.fetch(brandsQuery)
-    .then((data) => {
+    client.fetch(brandsQuery).then((data) => {
       setBrands(data);
     });
   }, []);
@@ -38,7 +36,7 @@ const Testimonial = () => {
         <>
           <div className='app__testimonial-item app__flex'>
 
-            {/* <img src={urlFor(test.imgurl)} alt='testimonials' /> */}
+            <img src={urlFor(test.imageurl)} alt='testimonials' />
             
             <div className='app__testimonial-content'>
               <p className='p-text'>{test.feedback}</p>
