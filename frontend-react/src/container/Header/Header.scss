@@ -65,6 +65,12 @@
         box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
 
+    .badge-cmp {
+        font-family: verdana;
+        align-items: flex-start;
+        color: red;
+    }
+
     .tag-cmp {
         flex-direction: column;
         margin-top: 3rem;
