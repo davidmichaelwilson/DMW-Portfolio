@@ -5,6 +5,9 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
 
+// import {FormErrors} from '../../FormErrors';
+
+
 const Footer = () => {
   const [formData, setFormData] = useState({name: '', email: '', message: '' })
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -25,6 +28,16 @@ const Footer = () => {
       name: formData.name,
       email: email,
       message: message,
+// added below
+      // formErrors: {name: '', email: '', message: ""},
+      // nameValid: false,
+      // emailValid: false,
+      // messageValid: false,
+      // formValid: false,
+
+      // this.setState({e.target}, 
+      //     () => {this.validateField.{e.target}})
+// added above
     }
     client.create(contact)
       .then(() => {
@@ -33,7 +46,48 @@ const Footer = () => {
       })
   }
 
-const formEntry = '' ? 'error': "not error";
+// added below
+  // validateField(fieldName, {e.target}) {
+  //   let fieldValidationErrors = this.state.formErrors;
+  //   let nameValid = this.state.nameValid;
+  //   let emailValid = this.state.emailValid;
+  //   let messageValid = this.state.messageValid;
+
+  //   switch(fieldName) {
+  //     case 'name':
+  //       nameValid = {e.target}.length >= 2;
+  //       fieldValidationErrors.name = nameValid ? '' : ' is invalid';
+  //       break;
+  //     case 'email':
+  //       emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+  //       fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+  //       break;
+  //     case 'message':
+  //       messageValid = value.length = 0;
+  //       fieldValidationErrors.message = messageValid ? '': ' is too short';
+  //       break;
+  //     default:
+  //       break;
+  //     }
+  //   this.setState({formErrors: fieldValidationErrors,
+  //       nameValid: nameValid,
+  //       emailValid: emailValid,
+  //       messageValid: messageValid
+  //     }, this.validateForm);
+  //   }
+
+  //   validateForm() {
+  //     this.setState({formValid: this.state.nameValid && this.state.emailValid && this.state.messageValid});
+  //   }
+
+  //   errorClass(error) {
+  //     return(error.length === 0 ? '' : 'has-error');
+  //   }
+// added above
+  }
+
+
+
 
   return (
     <>
@@ -53,7 +107,7 @@ const formEntry = '' ? 'error': "not error";
 
       <div className='app__footer-form app__flex'>
         <div className='app__flex'>
-          <input className='p-text' type='text' placeholder='Your Name' name='name' value={name} onChange={handleChangeInput} {...formEntry} />
+          <input className='p-text' type='text' placeholder='Your Name' name='name' value={name} onChange={handleChangeInput} />
         </div>
         <div className='app__flex'>
           <input className='p-text' type='email' placeholder='Your Email' name='email' value={email} onChange={handleChangeInput} />
@@ -71,12 +125,12 @@ const formEntry = '' ? 'error': "not error";
       </div>
 
       : <div>
-      <div className="app__contact-logo">
-        <img src={images.wmstudiosGR} alt="Walter Studios Media" />
-      </div>
-        <h3 className='head-text'>Thank you for getting in touch!</h3>
-      </div>
-      }
+          <div className="app__contact-logo">
+            <img src={images.wmstudiosGR} alt="Walter Studios Media" />
+          </div>
+          <h3 className='head-text'>Thank you for getting in touch!</h3>
+        </div>
+    }
 
     </>
   )
